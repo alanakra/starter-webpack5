@@ -39,6 +39,12 @@ module.exports = {
        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,        
        type: 'asset/inline',      
       },
+      // CSS, PostCSS, and Sass      
+      {
+       // Note: This is a setup for development. For production, you will use MiniCssExtractPlugin instead of style-loader, which will export the CSS as a minified file.        
+       test: /\.(scss|css)$/,        
+       use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],      
+      },
      ],  
     },
 }

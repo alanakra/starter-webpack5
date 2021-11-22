@@ -1,3 +1,5 @@
+import '../styles/main.scss'
+
 console.log('🎉')
 // Create a class property without a constructor
 class Game {  name = 'Violin Charades'}
