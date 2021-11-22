@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -16,6 +17,7 @@ module.exports = {
       title: 'Webpack Starter',      
       template: path.resolve(__dirname, './src/public/template.html'), // template file      
       filename: 'index.html', // output file    
-     }),  
+     }),
+     new CleanWebpackPlugin(),
  ],
 }
