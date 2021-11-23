@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const TerserPlugin = require("terser-webpack-plugin")
+const HtmlMinimizerPlugin = require("html-minimizer-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -55,7 +56,10 @@ module.exports = {
 
   optimization: {
     minimize: true,
-    minimizer: [new TerserPlugin()],
+    minimizer: [
+      new TerserPlugin(),
+      new HtmlMinimizerPlugin(),
+      ],
   },
 
   mode: 'development',
