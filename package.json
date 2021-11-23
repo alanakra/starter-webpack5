@@ -1,6 +1,6 @@
 {
   "name": "starter-webpack5",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Webpack 5 StarterKit",
   "main": "index.js",
   "scripts": {
