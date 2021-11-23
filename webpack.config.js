@@ -19,7 +19,8 @@ module.exports = {
 
  plugins: [    
     new HtmlWebpackPlugin({      
-      title: 'Webpack Starter',      
+      title: 'Webpack Starter',
+      lang: 'en',
       template: path.resolve(__dirname, './src/public/template.html'), // template file      
       filename: 'index.html', // output file    
      }),
