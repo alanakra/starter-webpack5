@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const TerserPlugin = require("terser-webpack-plugin")
 const HtmlMinimizerPlugin = require("html-minimizer-webpack-plugin");
 
-const pages = ['index','test']
+const pages = ['index','link']
 
 module.exports = {
   entry: pages.reduce((config, page) => {
