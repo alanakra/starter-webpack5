@@ -21,7 +21,7 @@ module.exports = {
     new HtmlWebpackPlugin({      
       title: 'Webpack Starter',
       lang: 'en',
-      template: path.resolve(__dirname, './src/public/template.html'), // template file      
+      template: path.resolve(__dirname, './src/public/index.html'), // template file      
       filename: 'index.html', // output file    
      }),
      new CleanWebpackPlugin(),
