@@ -5,28 +5,34 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const TerserPlugin = require("terser-webpack-plugin")
 const HtmlMinimizerPlugin = require("html-minimizer-webpack-plugin");
 
+const pages = ['index','test']
+
 module.exports = {
-  entry: {
-    main: [
-      path.resolve(__dirname, './src/app/index.js')
-      ]
-  },
+  entry: pages.reduce((config, page) => {
+    config[page] = `./src/app/index.js`;
+    return config;
+  }, {}),
 
   output: {
    path: path.resolve(__dirname, './dist'),
    filename: '[name].bundle.js',
  },
 
- plugins: [    
-    new HtmlWebpackPlugin({      
-      title: 'Webpack Starter',
-      lang: 'en',
-      template: path.resolve(__dirname, './src/public/index.html'), // template file      
-      filename: 'index.html', // output file    
-     }),
-     new CleanWebpackPlugin(),
-     new webpack.HotModuleReplacementPlugin(),
- ],
+ plugins: [].concat(
+  pages.map(
+    (page) =>
+      new HtmlWebpackPlugin({
+        title: 'Webpack Starter',
+        lang: 'en',
+        inject: true,
+        template: path.resolve(__dirname, `./src/public/${page}.html`), // template file      
+        filename: `${page}.html`,
+        chunks: [page],
+      }),
+      new CleanWebpackPlugin(),
+      new webpack.HotModuleReplacementPlugin(),
+  )
+),
 
  module: {    
     rules: [      
