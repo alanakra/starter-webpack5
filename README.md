@@ -42,6 +42,6 @@ You can view the deploy in `dist` folder created by Webpack and lanch a server i
  ┣ 📂fonts  
  ┣ 📂images  
  ┣ 📂public  
- ┃ ┗ 📜template.html  
+ ┃ ┗ index.html  
  ┗ 📂styles  
  ┃ ┗ 📜main.scss
